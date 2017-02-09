@@ -7,14 +7,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0.00082 -3.51734 377.99999 711"
+   viewBox="0.00082 -3.51734 398.01971 753.51968"
    version="1.0"
    overflow="visible"
    id="svg2"
    inkscape:version="0.91 r13725"
    sodipodi:docname="gear-cutout.svg"
-   width="4.1999998in"
-   height="7.9000001in"
+   width="112.33mm"
+   height="212.66mm"
    style="overflow:visible">
   <metadata
      id="metadata1572">
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -41,15 +41,15 @@
      inkscape:window-height="997"
      id="namedview1570"
      showgrid="false"
-     inkscape:document-units="in"
-     units="in"
-     fit-margin-left="0.25"
-     fit-margin-top="0.25"
-     fit-margin-bottom="0.25"
-     fit-margin-right="0.25"
-     inkscape:zoom="0.74252233"
-     inkscape:cx="-320.95141"
-     inkscape:cy="329.07655"
+     inkscape:document-units="mm"
+     units="mm"
+     fit-margin-left="6"
+     fit-margin-top="6"
+     fit-margin-bottom="6"
+     fit-margin-right="6"
+     inkscape:zoom="2.1001703"
+     inkscape:cx="253.11926"
+     inkscape:cy="535.91961"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -57,19 +57,19 @@
   <defs
      id="defs4" />
   <path
-     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.08499955;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 22.54332,352.02515 332.915,0 0,332.915 -332.915,0 z"
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.09074277;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 21.306035,17.787845 355.409275,0 0,355.409275 -355.409275,0 z"
      id="rect5710"
      inkscape:connector-curvature="0" />
   <path
-     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.08499955;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 22.54332,19.02516 332.915,0 0,332.915 -332.915,0 z"
+     style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.09074277;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 21.306035,373.28786 355.409275,0 0,355.40928 -355.409275,0 z"
      id="rect5712"
      inkscape:connector-curvature="0" />
   <g
      style="overflow:visible"
      id="g7754"
-     transform="matrix(90.201207,0,0,90.201207,30.109139,677.37433)">
+     transform="matrix(90.201207,0,0,90.201207,40.118993,354.38416)">
     <g
        transform="scale(1,-1)"
        id="draft"
