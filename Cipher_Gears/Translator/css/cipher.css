@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "Instruction";
+    src: url(../../../Fonts/Instruction.otf) format("opentype");
+}
+body {
+    background-color: #777777;
+    font-family: "Instruction";
+}
+input, select, textarea {
+    font-family: "Instruction";
+}
+textarea {
+    overflow: auto;
+    font-size: 12pt;
+}
+textarea:disabled {
+    background-color: #cccccc;
+}
+.fullWidth {
+  clear: both;
+  float: none;
+  width: 100%;
+}
+.centered {
+    text-align: center;
+}
+span.float {
+    display: inline-block;
+}
+span#slot-1 {
+    margin-right: -1.4%;
+}
+img.middle {
+    transform: rotate(6.4deg);
+}
+span#slot-3 {
+    margin-left: -1.4%;
+}
+img.gear {
+    width: 280px;
+    height: auto;
+    position:relative;
+    z-index: -1;
+}
+.arrow {
+    margin-top: 3%;
+}
+span#slot-2 img.arrow {
+    margin-left: -12%;
+    transform: rotate(180deg);
+}
+span#slot-3 img.arrow {
+    transform: rotate(180deg);
+}
+select {
+    margin: 8px;
+    font-size: 14pt;
+}
+input.key {
+    margin-bottom: 8px;
+    font-size: 14pt;
+    width: 1.45em;
+    text-align: center;
+}
+div#modeLeft {
+    font-size: 14pt;
+}
+div#modeRight {
+    font-size: 14pt;
+    
+}
+textarea {
+}
+span.button {
+    position: relative;
+    top: -11px;
+}
+#setGearsButton {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #4F4E4E; border-radius: 9px;
+    height: 34px;
+    width: 119px;
+    font-size: 100%;
+    padding-bottom: 3px;
+}
+
+label.onoffswitch-label {
+    text-align: left;
+}
+.onoffswitch {
+    position: relative; width: 119px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #4F4E4E; border-radius: 9px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    /*
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    */
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ENCRYPT";
+    padding-left: 8px;
+    background-color: #E63E3E; color: #EEEEEE;
+}
+.onoffswitch-inner:after {
+    content: "DECRYPT";
+    padding-right: 8px;
+    background-color: #48BD4E; color: #EEEEEE;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 17px; margin: 6.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 85px;
+    border: 2px solid #4F4E4E; border-radius: 9px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <script type="text/javascript" src="javascript/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="javascript/cipher.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/cipher.css">
+  </head>
+  <body>
+    <div class="fullWidth centered" >
+      <!-- Gear 1 -->
+      <span class="centered float" id="slot-1">
+        <div>
+          <select class="dropdown" id="spoke1">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+        <div><input type="text" class="key" id="key1"></div>
+        <div><img src="image/2-spoke.svg" id="gear-1" class="gear"></div>
+        <div><img src="image/white-arrow.svg" class="arrow" id="arrow1"></div>
+      </span>
+      <!-- Gear 2 -->
+      <span class="centered float" id="slot-2">
+        <div>
+          <select class="dropdown" id="spoke2">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+        <div><input type="text" class="key" id="key2"></div>
+        <div><img src="image/2-spoke.svg" id="gear-2" class="gear middle"></div>
+        <div><img src="image/white-arrow.svg" class="arrow" id="arrow2"></div>
+      </span>
+      <!-- Gear 3 -->
+      <span class="centered float" id="slot-3">
+        <div>
+          <select class="dropdown" id="spoke3">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+        <div><input type="text" class="key" id="key3"></div>
+        <div><img src="image/2-spoke.svg" id="gear-3" class="gear"></div>
+        <div><img src="image/white-arrow.svg" class="arrow" id="arrow3"></div>
+      </span>
+    </div>
+    <div class="fullWidth centered">
+      <span class="float button">
+        <!-- Set gears button -->
+        <input type="button" value="Set Gears" id="setGearsButton">
+      </span>
+      <span class="float onoffswitch">
+        <!-- Encode/Decode slider -->
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="modeSelect" checked>
+        <label class="onoffswitch-label" for="modeSelect">
+          <span class="onoffswitch-inner"></span>
+          <span class="onoffswitch-switch"></span>
+        </label>
+      </span>
+    </div>
+    <div class="centered">
+      <!-- Left (input) text area -->
+      <span class="centered float">
+        <div id="modeLeft" class="big">Plaintext:</div>
+        <div>
+          <textarea rows="8" cols="40" id="inputBox"></textarea>
+        </div>
+      </span>
+      <!-- Right (output) text area -->
+      <span class="centered float">
+        <div id="modeRight" class="big">Ciphertext:</div>
+          <textarea rows="8" cols="40" id="outputBox"></textarea>
+        </div>
+      <span>
+    </div>
+  </body>
+</html>
+
