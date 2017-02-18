@@ -12,8 +12,8 @@
    height="100.9254mm"
    viewBox="0 0 717.94225 357.60968"
    id="svg4978"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="rectangular_drawer.svg">
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="left_rectangular_drawer.svg">
   <metadata
      id="metadata5008">
     <rdf:RDF>
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,8 +37,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1018"
+     inkscape:window-width="1680"
+     inkscape:window-height="997"
      id="namedview5004"
      showgrid="false"
      inkscape:document-units="mm"
@@ -47,58 +47,50 @@
      fit-margin-right="6"
      fit-margin-bottom="6"
      units="mm"
-     inkscape:zoom="0.79506173"
-     inkscape:cx="844.30628"
-     inkscape:cy="12.655474"
+     inkscape:zoom="1.5901235"
+     inkscape:cx="367.72065"
+     inkscape:cy="182.34058"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4978" />
+     inkscape:current-layer="layer1" />
   <!-- Front-->
   <!-- Back-->
-  <g
-     transform="matrix(0,-1,1,0,246.39484,246.30484)"
-     id="g4984">
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.09"
-       d="m 247.5,22.5 0,24.75 11.25,0 0,24.75 -11.25,0 0,24.75 11.25,0 0,24.75 -11.25,0 0,13.49609 225,0 0,-13.49609 -11.25,0 0,-24.75 11.25,0 0,-24.75 -11.25,0 0,-24.75 11.25,0 0,-24.75 -28.125,0 0,11.25 -28.125,0 0,-11.25 -22.5,0 0,11.25 -22.5,0 0,-11.25 -22.5,0 0,11.25 -22.5,0 0,-11.25 -22.5,0 0,11.25 -28.125,0 0,-11.25 -28.125,0 z"
-       transform="translate(-247.5,-22.5)"
-       id="polygon4986"
-       inkscape:connector-curvature="0" />
-  </g>
   <!-- Left-->
-  <g
-     transform="matrix(0,-1,1,0,471.56703,336.30484)"
-     id="g4988">
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.09"
-       d="m 483.75,22.5 0,24.75 -11.25,0 0,24.75 11.25,0 0,24.75 -11.25,0 0,24.75 11.25,0 0,13.49023 292.5,0 0,-13.49023 11.25,0 0,-24.75 -11.25,0 0,-24.75 11.25,0 0,-24.75 -11.25,0 0,-24.75 -16.875,0 0,11.25 -28.125,0 0,-11.25 -22.5,0 0,11.25 -22.5,0 0,-11.25 -22.5,0 0,11.25 -22.5,0 0,-11.25 -22.5,0 0,11.25 -22.5,0 0,-11.25 -22.5,0 0,11.25 -22.5,0 0,-11.25 -22.5,0 0,11.25 -28.125,0 0,-11.25 -16.875,0 z"
-       transform="translate(-472.5,-22.5)"
-       id="polygon4990"
-       inkscape:connector-curvature="0" />
-  </g>
   <!-- Right-->
   <!-- Top-->
-  <g
-     transform="translate(21.304843,21.304843)"
-     id="g4996">
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.09"
-       d="m 11.25,11.25 16.875,0 0,-11.25 28.125,0 0,11.25 22.5,0 0,-11.25 22.5,0 0,11.25 22.5,0 0,-11.25 22.5,0 0,11.25 22.5,0 0,-11.25 28.125,0 0,11.25 16.875,0 0,16.875 11.25,0 0,28.125 -11.25,0 0,22.5 11.25,0 0,22.5 -11.25,0 0,22.5 11.25,0 0,22.5 -11.25,0 0,22.5 11.25,0 0,22.5 -11.25,0 0,22.5 11.25,0 0,22.5 -11.25,0 0,22.5 11.25,0 0,28.125 -11.25,0 0,16.875 -16.875,0 0,11.25 -28.125,0 0,-11.25 -22.5,0 0,11.25 -22.5,0 0,-11.25 -22.5,0 0,11.25 -22.5,0 0,-11.25 -22.5,0 0,11.25 -28.125,0 0,-11.25 -16.875,0 0,-16.875 -11.25,0 0,-28.125 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.5 -11.25,0 0,-28.125 11.25,0 z"
-       id="polygon4998"
-       inkscape:connector-curvature="0" />
-  </g>
   <!-- Bottom-->
-  <path
-     inkscape:connector-curvature="0"
-     style="fill:none;stroke:#000000;stroke-width:0.09"
-     d="m 358.98093,246.30484 13.49609,0 0,-11.25 24.75,0 0,11.25 24.75,0 0,-11.25 24.75,0 0,11.25 24.75001,0 0,-28.125 -11.25,0 0,-28.125 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.499997 -11.25,0 0,-28.125 11.25,0 0,-28.125 -24.75001,0 0,11.25 -24.75,0 0,-11.25 -24.75,0 0,11.25 -24.75,0 0,-11.25 -13.49609,0"
-     id="polygon4986-4"
-     sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccc" />
-  <path
-     inkscape:connector-curvature="0"
-     style="fill:none;stroke:#000000;stroke-width:0.09"
-     d="m 584.14724,325.05484 13.4903,0 0,11.25 24.75,0 0,-11.25 24.75,0 0,11.25 24.75,0 0,-11.25 24.7499,0 0,-16.875 -11.25,0 0,-28.125 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.5 -11.25,0 0,-22.5 11.25,0 0,-22.499997 -11.25,0 0,-28.125 11.25,0 0,-16.875 -24.7499,0 0,-11.25 -24.75,0 0,11.25 -24.75,0 0,-11.25 -24.75,0 0,11.25 -13.4903,0"
-     id="polygon4990-2"
-     sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccc" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Cut"
+     style="display:inline">
+    <path
+       inkscape:connector-curvature="0"
+       id="polygon4986"
+       d="m 246.39484,246.30484 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 13.49609 v -225 h -13.49609 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 28.125 h 11.25 v 28.125 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 28.125 h -11.25 z"
+       style="fill:none;stroke:#000000;stroke-width:0.09" />
+    <path
+       inkscape:connector-curvature="0"
+       id="polygon4990"
+       d="m 471.56703,325.05483 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 13.49023 l 0,-292.5 h -13.49023 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v 16.875 h 11.25 v 28.125 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 l 0,28.125 h -11.25 z"
+       style="fill:none;stroke:#000000;stroke-width:0.09" />
+    <path
+       inkscape:connector-curvature="0"
+       id="polygon4998"
+       d="m 32.554843,32.554843 h 16.875 v -11.25 h 28.125 v 11.25 h 22.499997 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 28.125 v 11.25 h 16.875 v 16.875 h 11.25 v 28.125 h -11.25 v 22.499997 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 28.125 h -11.25 v 16.875 h -16.875 v 11.25 h -28.125 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 H 77.554843 v 11.25 h -28.125 v -11.25 h -16.875 v -16.875 h -11.25 v -28.125 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 77.554843 h -11.25 v -28.125 h 11.25 z"
+       style="fill:none;stroke:#000000;stroke-width:0.09" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.09"
+       d="m 358.98093,246.30484 h 13.49609 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75001 v -28.125 h -11.25 v -28.125 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 77.554843 h -11.25 v -28.125 h 11.25 v -28.125 h -24.75001 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -13.49609"
+       id="polygon4986-4"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccc" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:0.09"
+       d="m 584.14724,325.05484 h 13.4903 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.7499 v -16.875 h -11.25 v -28.125 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 77.554843 h -11.25 v -28.125 h 11.25 v -16.875 h -24.7499 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -13.4903"
+       id="polygon4990-2"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccc" />
+  </g>
 </svg>
