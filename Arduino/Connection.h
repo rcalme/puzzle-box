@@ -31,7 +31,7 @@ class Connection {
     boolean isConnected();
 
     // Prints the connection to Serial
-    print();
+    void print();
 
 }
     
