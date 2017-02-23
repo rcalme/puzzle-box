@@ -87,15 +87,15 @@ void loop() {
         Serial.println("  Bad connection. All locks resetting.");
             
         // Turn off all LEDs.
-        for (int i=progress; i>0; i--) {
+        for (int i=progress-1; i>=0; i--) {
           // Play failure sound
           digitalWrite(failureSoundPin,HIGH);
             
           // Turn an LED off
           Serial.print("LED ");
-          Serial.print(i);
+          Serial.print(i+1);
           Serial.println(" off.");
-          digitalWrite(ledPins[progress],LOW);
+          digitalWrite(ledPins[i],LOW);
           delay(500);
 
           // Stop failure sound
