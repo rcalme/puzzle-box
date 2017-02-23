@@ -1,4 +1,3 @@
-#include <Keypad.h>
 #include "PegBoard.h"
 #include "Connection.h"
 
@@ -9,7 +8,7 @@
 // Initialize the PegBoard
 const byte pegCount = 10;
 const byte pegPins[pegCount] = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-pegBoard = PegBoard(pegCount, pegPins);
+PegBoard pegBoard = PegBoard(pegCount, pegPins);
 
 // Initialize the LEDs
 const byte ledCount = 5;
@@ -20,8 +19,7 @@ byte successSoundPin = 13;
 byte failureSoundPin = 12;
 
 // Set up our combinations
-const byte pegCombo[ledCount][2] = {
-  Connection(1,7),
+const Connection pegCombos[ledCount] = {
   Connection(1,7),
   Connection(3,5),
   Connection(2,8),
@@ -56,7 +54,7 @@ void setup() {
 void loop() {
   // Check if there are connections
   if (pegBoard.hasNewConnection()) {
-    conn = pegBoard.getConnection();
+    Connection conn = pegBoard.getConnection();
     conn.print();
     if (conn.isConnected()) {
       // New connection matches expected combination
@@ -89,13 +87,13 @@ void loop() {
         Serial.println("  Bad connection. All locks resetting.");
             
         // Turn off all LEDs.
-        for (int i=progress; i>=0; i--) {
+        for (int i=progress; i>0; i--) {
           // Play failure sound
           digitalWrite(failureSoundPin,HIGH);
             
           // Turn an LED off
           Serial.print("LED ");
-          Serial.print(i+1);
+          Serial.print(i);
           Serial.println(" off.");
           digitalWrite(ledPins[progress],LOW);
           delay(500);

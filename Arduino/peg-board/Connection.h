@@ -1,6 +1,7 @@
 #ifndef CONNECTION
 #define CONNECTION
 
+#include <Arduino.h>
 /*
   Defines a connection between a pair of pegs.
 
@@ -19,13 +20,11 @@ class Connection {
   public:
     // Constructors
     Connection();
-    // Create via value-copy from another
-    Connection(Connection conn);
     // Create via provided values
     Connection(byte a, byte b);
 
     // Overload equals comparator
-    operator==(const Connection& rhs);
+    boolean operator==(const Connection &rhs);
 
     // Returns whether or not a connection is established
     boolean isConnected();
@@ -33,6 +32,6 @@ class Connection {
     // Prints the connection to Serial
     void print();
 
-}
+};
     
 #endif

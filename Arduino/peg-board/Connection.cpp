@@ -2,14 +2,8 @@
  
 // Constructors
 Connection::Connection() {
-  left = -1;
-  right = -1;
-}
-
-// Create via value-copy from another
-Connection::Connection(Connection conn) {
-  left = conn.left;
-  right = conn.right;
+  left = 255;
+  right = 255;
 }
 
 // Create via provided values
@@ -27,13 +21,13 @@ Connection::Connection(byte a, byte b) {
 }
 
 // Overload equals comparator
-Connection::operator==(const Connection& rhs) {
-  return (left==rhs.left && right=rhs.right);
+boolean Connection::operator==(const Connection &rhs) {
+  return (left==rhs.left && right==rhs.right);
 }
 
 // Returns true if connection is connected
 boolean Connection::isConnected() {
-  return (left != -1 && right != -1);
+  return (left != 255 && right != 255);
 }
 
 // Prints connection to Serial port

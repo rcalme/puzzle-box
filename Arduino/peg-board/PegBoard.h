@@ -15,7 +15,7 @@ class PegBoard {
   private:
     byte pegCount;
     byte* pegPins;
-    Connection lastConn();
+    Connection lastConn;
 
     // Scans hardware, returns a connection
     // object representing the pins (if any)
@@ -24,14 +24,14 @@ class PegBoard {
   
   public:
     // Constructor
-    PegBoard(byte numPegs, byte[] pins);
+    PegBoard(const byte numPegs, const byte pins[]);
     // Destructor
     ~PegBoard();
 
     // Returns true, if there's a connection
     // (different than the last seen)
     // Otherwise, returns false.
-    boolean seesNewConnection();
+    boolean hasNewConnection();
 
     // Returns the most recent connection
     Connection getConnection();
