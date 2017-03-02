@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -48,7 +48,7 @@
      fit-margin-bottom="6"
      units="mm"
      inkscape:zoom="1.5901235"
-     inkscape:cx="367.72065"
+     inkscape:cx="260.49627"
      inkscape:cy="182.34058"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -69,26 +69,26 @@
        inkscape:connector-curvature="0"
        id="polygon4986"
        d="m 246.39484,246.30484 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 13.49609 v -225 h -13.49609 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 28.125 h 11.25 v 28.125 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 28.125 h -11.25 z"
-       style="fill:none;stroke:#000000;stroke-width:0.09" />
+       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        inkscape:connector-curvature="0"
        id="polygon4990"
        d="m 471.56703,325.05483 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 13.49023 l 0,-292.5 h -13.49023 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v 16.875 h 11.25 v 28.125 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 l 0,28.125 h -11.25 z"
-       style="fill:none;stroke:#000000;stroke-width:0.09" />
+       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        inkscape:connector-curvature="0"
        id="polygon4998"
        d="m 32.554843,32.554843 h 16.875 v -11.25 h 28.125 v 11.25 h 22.499997 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 28.125 v 11.25 h 16.875 v 16.875 h 11.25 v 28.125 h -11.25 v 22.499997 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 28.125 h -11.25 v 16.875 h -16.875 v 11.25 h -28.125 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 H 77.554843 v 11.25 h -28.125 v -11.25 h -16.875 v -16.875 h -11.25 v -28.125 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 77.554843 h -11.25 v -28.125 h 11.25 z"
-       style="fill:none;stroke:#000000;stroke-width:0.09" />
+       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:0.09"
+       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 358.98093,246.30484 h 13.49609 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75001 v -28.125 h -11.25 v -28.125 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 77.554843 h -11.25 v -28.125 h 11.25 v -28.125 h -24.75001 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -13.49609"
        id="polygon4986-4"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccc" />
     <path
        inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:0.09"
+       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 584.14724,325.05484 h 13.4903 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.7499 v -16.875 h -11.25 v -28.125 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 77.554843 h -11.25 v -28.125 h 11.25 v -16.875 h -24.7499 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -13.4903"
        id="polygon4990-2"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccc" />

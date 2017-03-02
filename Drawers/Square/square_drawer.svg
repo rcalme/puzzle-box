@@ -48,7 +48,7 @@
      fit-margin-bottom="6"
      units="mm"
      inkscape:zoom="1.2234801"
-     inkscape:cx="442.45701"
+     inkscape:cx="303.10043"
      inkscape:cy="201.47595"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -68,38 +68,28 @@
        inkscape:connector-curvature="0"
        id="polygon4901"
        d="m 403.89478,403.80484 h 24.75 l 0,-11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 13.48828 v -382.5 h -13.48828 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 33.75 h 11.25 v 33.75 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 33.75 h -11.25 z"
-       style="fill:none;stroke:#000000;stroke-width:0.09" />
+       style="fill:none;stroke:#000000;stroke-width:0.70866141;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        inkscape:connector-curvature="0"
        id="polygon4913"
        d="m 32.554781,32.554843 h 22.5 v -11.25 h 33.75 v 11.25 h 22.499999 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 33.75 v 11.25 h 22.5 v 22.5 h 11.25 v 33.75 h -11.25 v 22.499997 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 33.75 h -11.25 v 22.5 h -22.5 v 11.25 h -33.75 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 H 88.804781 v 11.25 h -33.75 v -11.25 h -22.5 v -22.5 h -11.25 v -33.75 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 88.804843 h -11.25 v -33.75 h 11.25 z"
-       style="fill:none;stroke:#000000;stroke-width:0.09" />
+       style="fill:none;stroke:#000000;stroke-width:0.70866141;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccc"
        inkscape:connector-curvature="0"
        id="polygon4901-4"
        d="m 516.47309,403.80485 h 13.48828 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -33.75 h -11.25 v -33.75 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -33.75 h 11.25 v -33.75 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -13.48828"
-       style="fill:none;stroke:#000000;stroke-width:0.09" />
-    <g
-       transform="rotate(-90,516.42809,-112.62325)"
-       id="g4903">
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.09"
-         d="M 798.75,22.5 V 47.25 H 787.5 V 72 h 11.25 V 96.75 H 787.5 v 24.75 h 11.25 v 13.48438 h 360 V 121.5 H 1170 V 96.75 h -11.25 V 72 H 1170 V 47.25 h -11.25 V 22.5 h -22.5 V 33.75 H 1102.5 V 22.5 H 1080 v 11.25 h -22.5 V 22.5 H 1035 v 11.25 h -22.5 V 22.5 H 990 V 33.75 H 967.5 V 22.5 H 945 V 33.75 H 922.5 V 22.5 H 900 V 33.75 H 877.5 V 22.5 H 855 V 33.75 H 821.25 V 22.5 Z"
-         transform="translate(-787.5,-22.5)"
-         id="polygon4905"
-         inkscape:connector-curvature="0" />
-    </g>
-    <g
-       transform="rotate(90,416.40265,437.70749)"
-       id="g4903-1">
-      <path
-         sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccc"
-         style="fill:none;stroke:#000000;stroke-width:0.09"
-         d="M 1158.75,134.98438 V 121.5 H 1170 V 96.75 h -11.25 V 72 H 1170 V 47.25 h -11.25 V 22.5 h -22.5 V 33.75 H 1102.5 V 22.5 H 1080 v 11.25 h -22.5 V 22.5 H 1035 v 11.25 h -22.5 V 22.5 H 990 V 33.75 H 967.5 V 22.5 H 945 V 33.75 H 922.5 V 22.5 H 900 V 33.75 H 877.5 V 22.5 H 855 V 33.75 H 821.25 V 22.5 h -22.5 V 47.25 H 787.5 V 72 h 11.25 V 96.75 H 787.5 v 24.75 h 11.25 v 13.48438"
-         transform="translate(-787.5,-22.5)"
-         id="polygon4905-0"
-         inkscape:connector-curvature="0" />
-    </g>
+       style="fill:none;stroke:#000000;stroke-width:0.70866141;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:connector-curvature="0"
+       id="polygon4905"
+       d="M 629.05134,392.55484 H 653.80134 V 403.80484 H 678.55134 V 392.55484 H 703.30134 V 403.80484 H 728.05134 V 392.55484 H 741.53572 V 32.55484 H 728.05134 V 21.30484 H 703.30134 V 32.55484 H 678.55134 V 21.30484 H 653.80134 V 32.55484 H 629.05134 V 55.05484 H 640.30134 V 88.80484 H 629.05134 V 111.30484 H 640.30134 V 133.80484 H 629.05134 V 156.30484 H 640.30134 V 178.80484 H 629.05134 V 201.30484 H 640.30134 L 640.30134,223.80484 H 629.05134 L 629.05134,246.30484 H 640.30134 V 268.80484 H 629.05134 V 291.30484 H 640.30134 V 313.80484 H 629.05134 V 336.30484 H 640.30134 V 370.05484 H 629.05134 Z"
+       style="fill:none;stroke:#000000;stroke-width:0.70866144;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:connector-curvature="0"
+       id="polygon4905-0"
+       d="M 741.62576,392.55484 H 755.11014 V 403.80484 H 779.86014 V 392.55484 H 804.61014 V 403.80484 H 829.36014 V 392.55484 H 854.11014 V 370.05484 H 842.86014 V 336.30484 H 854.11014 V 313.80484 H 842.86014 V 291.30484 H 854.11014 V 268.80484 H 842.86014 V 246.30484 H 854.11014 V 223.80484 H 842.86014 L 842.86014,201.30484 H 854.11014 L 854.11014,178.80484 H 842.86014 V 156.30484 H 854.11014 V 133.80484 H 842.86014 V 111.30484 H 854.11014 V 88.80484 H 842.86014 V 55.05484 H 854.11014 V 32.55484 H 829.36014 V 21.30484 H 804.61014 V 32.55484 H 779.86014 V 21.30484 H 755.11014 V 32.55484 H 741.62576"
+       style="fill:none;stroke:#000000;stroke-width:0.70866144;stroke-miterlimit:4;stroke-dasharray:none"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccc" />
   </g>
 </svg>
