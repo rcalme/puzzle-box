@@ -3,3 +3,6 @@ Cipher_Gears/GearGenerator3.exe
 *.skb
 *.swp
 *.G00
+Rendering/AutoSave_Full-Rendering.skp
+Drawers/Latch/old/Latch.skp
+*.gcode
