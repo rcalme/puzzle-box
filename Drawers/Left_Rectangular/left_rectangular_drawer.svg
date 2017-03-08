@@ -12,7 +12,7 @@
    height="100.9254mm"
    viewBox="0 0 717.94225 357.60968"
    id="svg4978"
-   inkscape:version="0.92.1 r15371"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="left_rectangular_drawer.svg">
   <metadata
      id="metadata5008">
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,8 +37,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1680"
-     inkscape:window-height="997"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
      id="namedview5004"
      showgrid="false"
      inkscape:document-units="mm"
@@ -47,9 +47,9 @@
      fit-margin-right="6"
      fit-margin-bottom="6"
      units="mm"
-     inkscape:zoom="1.5901235"
-     inkscape:cx="260.49627"
-     inkscape:cy="182.34058"
+     inkscape:zoom="1.1243871"
+     inkscape:cx="342.93986"
+     inkscape:cy="114.87161"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -69,28 +69,37 @@
        inkscape:connector-curvature="0"
        id="polygon4986"
        d="m 246.39484,246.30484 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 13.49609 v -225 h -13.49609 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 28.125 h 11.25 v 28.125 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 28.125 h -11.25 z"
-       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none" />
+       style="fill:none;stroke:#000000;stroke-width:0.70866142;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        inkscape:connector-curvature="0"
        id="polygon4990"
        d="m 471.56703,325.05483 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 13.49023 l 0,-292.5 h -13.49023 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v 16.875 h 11.25 v 28.125 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 l 0,28.125 h -11.25 z"
-       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none" />
+       style="fill:none;stroke:#000000;stroke-width:0.70866142;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        inkscape:connector-curvature="0"
        id="polygon4998"
        d="m 32.554843,32.554843 h 16.875 v -11.25 h 28.125 v 11.25 h 22.499997 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 22.5 v 11.25 h 22.5 v -11.25 h 28.125 v 11.25 h 16.875 v 16.875 h 11.25 v 28.125 h -11.25 v 22.499997 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 22.5 h -11.25 v 22.5 h 11.25 v 28.125 h -11.25 v 16.875 h -16.875 v 11.25 h -28.125 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 h -22.5 v 11.25 h -22.5 v -11.25 H 77.554843 v 11.25 h -28.125 v -11.25 h -16.875 v -16.875 h -11.25 v -28.125 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 77.554843 h -11.25 v -28.125 h 11.25 z"
-       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none" />
+       style="fill:none;stroke:#000000;stroke-width:0.70866142;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.70866142;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 358.98093,246.30484 h 13.49609 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75001 v -28.125 h -11.25 v -28.125 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 77.554843 h -11.25 v -28.125 h 11.25 v -28.125 h -24.75001 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -13.49609"
        id="polygon4986-4"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccc" />
     <path
        inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:0.7086614;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:0.70866142;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 584.14724,325.05484 h 13.4903 v 11.25 h 24.75 v -11.25 h 24.75 v 11.25 h 24.75 v -11.25 h 24.7499 v -16.875 h -11.25 v -28.125 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 v -22.5 h -11.25 v -22.5 h 11.25 V 77.554843 h -11.25 v -28.125 h 11.25 v -16.875 h -24.7499 v -11.25 h -24.75 v 11.25 h -24.75 v -11.25 h -24.75 v 11.25 h -13.4903"
        id="polygon4990-2"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccc" />
+    <path
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.70866144;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 51.954445,21.304844 37.204723,0 0,70.866142 -37.204723,0 z"
+       id="rect4138-2" />
+    <path
+       transform="matrix(0,1,-1,0,0,0)"
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.70866144;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 51.954445,-257.73343 37.204723,0 0,11.33858 -37.204723,0 z"
+       id="rect4138-2-2" />
   </g>
 </svg>
