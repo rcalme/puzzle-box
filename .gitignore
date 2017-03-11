@@ -1,8 +1,10 @@
-Cipher_Gears/GearGenerator3.exe
+Cipher_Gears/*.exe
 *.ini
 *.skb
 *.swp
 *.G00
-Rendering/AutoSave_Full-Rendering.skp
-Drawers/Latch/old/Latch.skp
+Drawers/Latch/old/*
 *.gcode
+*.LOG
+
+*.tool
