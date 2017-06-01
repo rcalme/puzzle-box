@@ -1,106 +1,129 @@
 #!/usr/bin/python
-
 import re
 from string import ascii_uppercase
 import random
 
-""" Turns a wheel by a specified number of teeth """
-def rotate(wheel, n):
-    #print "rotating " + str(n)
-    n = n % len(wheel)
-    return wheel[n:] + wheel[:n]
+class GearTranslator:
 
-""" Chooses specified wheels from a larger pool,
-    sets their positions with the provided key """
-def select_and_set_wheels(wheels, wheel_order, key):
-    wheels_in_use = list()
-    # Local copy of the wheels we'll be rotating
-    for wheel_number, key_letter in zip(wheel_order, key):
-        # How far do we need to turn the wheel to get the key at the front?
-        index_of_key = wheels[wheel_number].index(key_letter)
-        # Rotate the selected wheel that far
-        rotated_wheel = rotate(wheels[wheel_number], index_of_key)
-        # Add a copy to our list of wheels in play
-        wheels_in_use.append(rotated_wheel)
-    return wheels_in_use
+    def __init__(self, seed):
+        # Prepare a set of randomized A-Z wheels
+        self.gears = {}
+        
+        # 2684
+        letters = list(ascii_uppercase)
+        random.seed(seed)
+        for spokes in range(2,8):
+            random.shuffle(letters)
+            self.gears[spokes] = list(letters)
+        self.gears_in_use = list()
 
-""" Debugging: prints the wheels in the passed set """
-def show_wheels(wheel_set):
-    for wheel in wheel_set:
-        print ''.join(wheel)
-    pass
 
-""" Takes a set of prepared wheels, and a plaintext string, encrypts it """
-def encrypt(wheel_set, plain_text):
-    # Clean the plaintext of non-letter characters
-    plain_text = re.sub(r'[^A-Z]', '', plain_text.upper())
-    # Encrypt the message
-    # Move through ciphertext, a letter at a time
-    cipher_text = list()
-    for msg_index, plain_letter in enumerate(plain_text):
-        # How far do we need to turn the lead wheel to get to this number?
-        current_wheel = (msg_index % (len(wheel_set) - 1)) + 1
-        rotation_distance = wheel_set[current_wheel].index(plain_letter)
-        # Rotate all the wheels by that amount, in alternating directions
-        for wheel_index, wheel in enumerate(wheel_set):
-            wheel_set[wheel_index] = rotate(wheel, rotation_distance * pow(-1, (wheel_index-current_wheel) % 2))
-        # Now read off the encrypted letter, from alternating wheels
-        cipher_letter = wheel_set[0][0]
-        print "Encrypting '" + plain_letter + "' -> '" + cipher_letter + "' (from wheel " + str(current_wheel+1) + ")"
-        #show_wheels(wheel_set)
-        cipher_text.append(cipher_letter)
-    # Pretty it up into standard four-character block output
-    cipher_text = ''.join(cipher_text)
-    cipher_text = [cipher_text[i:i+4] for i in range(0, len(cipher_text), 4)]
-    return ' '.join(cipher_text)
-
-""" Takes a set of prepared wheels, and a ciphertext string, decrypts it """
-def decrypt(wheel_set, cipher_text):
-    # Ciphertext should already be clean, but let's do this step anyway
-    cipher_text = re.sub(r'[^A-Z]', '', cipher_text.upper())
-    # Decrypt the message
-    # Move through plaintext, a letter at a time
-    plain_text = list()
-    for msg_index, cipher_letter in enumerate(cipher_text):
-        # How far do we need to turn the lead wheel to get to this number?
-        rotation_distance = wheel_set[0].index(cipher_letter)
-        # Rotate all the wheels by that amount, in alternating directions
-        for wheel_index, wheel in enumerate(wheel_set):
-            wheel_set[wheel_index] = rotate(wheel, rotation_distance * pow(-1, wheel_index % 2))
-        # Now read off the decrypted letter, from alternating wheels
-        current_wheel = (msg_index % (len(wheel_set) - 1)) + 1
-        plain_letter = wheel_set[current_wheel][0]
-        print "Decrypting '" + cipher_letter + "' -> '" + plain_letter + "' (from wheel " + str(current_wheel+1) + ")"
-        #show_wheels(wheel_set)
-        plain_text.append(plain_letter)
-    # Pretty it up into standard four-character block output
-    plain_text = ''.join(plain_text)
-    plain_text = [plain_text[i:i+4] for i in range(0, len(plain_text), 4)]
-    return ' '.join(plain_text)
+    """ Turns a gear by a specified number of teeth """
+    def _rotate(self, spokes, teeth):
+        #print "Rotating %d-spoke wheel by %d teeth" % (wheel, teeth)
+        gear_copy = self.gears[spokes]
+        teeth = teeth % len(gear_copy)
+        self.gears[spokes] = gear_copy[teeth:] + gear_copy[:teeth]
     
-# Prepare a set of randomized A-Z wheels
-letters = list(ascii_uppercase)
-wheels = {}
 
-random.seed(2684)
-for spokes in range(2,8):
-    random.shuffle(letters)
-    wheels[spokes] = list(letters)
+    """ Chooses specified wheels from a larger pool,
+        sets their positions with the provided key """
+    def select_and_set_wheels(self, gear_order, cipher):
+        # Empty any previous gear sets
+        self.gears_in_use = list()
+        # Local copy of the wheels we'll be rotating
+        for spokes, cipher_letter in zip(gear_order, cipher):
+            # How far do we need to turn the gear to get the requested letter at the front?
+            teeth = self.gears[spokes].index(cipher_letter)
+            # Rotate the selected gear that far
+            self._rotate(spokes, teeth)
+            # Take note of the selected gears and their order
+            self.gears_in_use.append(spokes)
+    
 
-for spokes in wheels:
-    print str(spokes) + "-spoke Wheel: " + ''.join(wheels[spokes])
-print "\n\n"
+    """ Debugging: Prints the currently selected gears, and their rotation"""
+    def _show_wheels(self):
+        for spokes in self.gears_in_use:
+            print "%d-spoke: %s" % (spokes, ''.join(self.gears[spokes]))
+        pass
+    
 
-# Set a group of wheels, and a key
-wheels_to_use = select_and_set_wheels(wheels, [2,4,6,7], "DOGS")
-plain_text = "Attack at dawn!"
-print plain_text
+    """ Takes a set of prepared gears, and a plaintext string, encrypts it """
+    def encrypt(self, plain_text, spacing=False):
+        # Clean the plaintext of non-letter characters
+        plain_text = re.sub(r'[^A-Z]', '', plain_text.upper())
+        # Encrypt the message
+        # Move through ciphertext, a letter at a time
+        cipher_text = list()
+        for msg_index, plain_letter in enumerate(plain_text):
+            # On encryption, input gear alternates. Find which gear to use as input
+            current_idx = (msg_index % (len(self.gears_in_use) - 1)) + 1
+            current_spokes = self.gears_in_use[current_idx]
+            # Determine how many teeth it'll need to rotate
+            rotation_teeth = self.gears[current_spokes].index(plain_letter)
+            # Rotate all the wheels by that amount, in alternating directions
+            for idx, spokes in enumerate(self.gears_in_use):
+                self._rotate(spokes, rotation_teeth * pow(-1, (idx-current_idx) % 2))
+            # Now read off the encrypted letter, always from gear 0
+            cipher_letter = self.gears[self.gears_in_use[0]][0]
+            cipher_text.append(cipher_letter)
+            #print "Encrypting '%s' -> '%s' (from %d-spoke gear)" % (plain_letter, cipher_letter, current_spokes)
+            #self._show_wheels()
+        # Pretty it up into standard four-character block output
+        cipher_text = ''.join(cipher_text)
+        if spacing:
+            cipher_text = [cipher_text[i:i+4] for i in range(0, len(cipher_text), 4)]
+            cipher_text = ' '.join(cipher_text)
+        return cipher_text
+    
 
-#show_wheels(wheels_to_use)
-cipher_text = encrypt(wheels_to_use, plain_text)
-print cipher_text
+    """ Takes a set of prepared wheels, and a ciphertext string, decrypts it """
+    def decrypt(self, cipher_text, spacing=False):
+        # Ciphertext should already be clean, but let's do this step anyway
+        cipher_text = re.sub(r'[^A-Z]', '', cipher_text.upper())
+        # Decrypt the message
+        # Move through plaintext, a letter at a time
+        plain_text = list()
+        for msg_index, cipher_letter in enumerate(cipher_text):
+            # How far do we need to turn the lead wheel to get to this number?
+            # On decryption, input gear is always gear 0
+            rotation_teeth = self.gears[self.gears_in_use[0]].index(cipher_letter)
+            # Rotate all the wheels by that amount, in alternating directions
+            for idx, spokes in enumerate(self.gears_in_use):
+                self._rotate(spokes, rotation_teeth * pow(-1, idx % 2))
+            # Now read off the decrypted letter, from alternating wheels
+            current_spokes = self.gears_in_use[(msg_index % (len(self.gears_in_use) - 1)) + 1]
+            plain_letter = self.gears[current_spokes][0]
+            plain_text.append(plain_letter)
+            #print "Decrypting '%s' -> '%s' (from %d-spoke gear)" % (cipher_letter, plain_letter, current_spokes)
+            #show_wheels(wheel_set)
+        # Pretty it up into standard four-character block output
+        plain_text = ''.join(plain_text)
+        if spacing:
+            plain_text = [plain_text[i:i+4] for i in range(0, len(plain_text), 4)]
+            plain_text = ' '.join(plain_text)
+        return plain_text
+    
 
-#show_wheels(wheels_to_use)
-plain_text = decrypt(wheels_to_use, cipher_text)
-print plain_text
+def main():
+    # Initialize a GearTranslator
+    gt = GearTranslator(2684)
+    
+    # Set a combination
+    gt.select_and_set_wheels([2,4,6,7], "DOGS")
+    #gt._show_wheels()
+    
+    # Set a group of wheels, and a key
+    plain_text = "Attack at dawn!"
+    print plain_text
+    
+    #cipher_text = gt.encrypt(plain_text, spacing=True)
+    cipher_text = gt.encrypt(plain_text)
+    print cipher_text
+    
+    #plain_text = gt.decrypt(cipher_text, spacing=True)
+    plain_text = gt.decrypt(cipher_text)
+    print plain_text
 
+if __name__ == "__main__":
+    main()
