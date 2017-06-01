@@ -1,0 +1,32 @@
+0.54"
+
+Letters
+  Bit: 0.125, 30 deg, 0.1 Depth, 4%/25%, 18K RPM, 0.15 ips, 0.2 ips plunge
+  Depth: Flat @ 0.1
+  Type: V-Carve  
+
+LED
+  Bit: 0.125
+  Depth: Through
+  Type: Pocker
+  Passes: 4
+
+Socket
+  Bit: 0.25
+  Depth: 0.2
+  Type: Pocket
+  Passes: 2
+
+Socket Holes
+  Bit 0.25
+  Depth: Through
+  Type: Pocket
+  Passes: 4
+
+Outer Cut
+  Bit 0.25
+  Depth: Through
+  Type: Profile
+  Tabs: 4 @ 0.1 tall, 0.25 wide
+
+
