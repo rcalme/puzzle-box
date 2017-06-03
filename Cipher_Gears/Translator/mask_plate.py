@@ -6,7 +6,7 @@ from cryptex import GearTranslator
 
 
 def create_random_grid(width, height):
-    letters = [x for x in 'ABCDEFGHIJKLMNOPQRSTUVXYZ']
+    letters = [x for x in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
     random.seed(1234)
     grid = []
     for xpos in range(height):
@@ -17,14 +17,18 @@ def create_random_grid(width, height):
 
 
 def print_grid(grid, colors=True):
+    print "+%s+" % ('-' * (len(grid[0])*2-1))
     for row in grid:
-        for char in row:
+        sys.stdout.write("|")
+        for idx, char in enumerate(row):
             if colors:
                 sys.stdout.write(colored(char[0], char[1]))
             else:
                 sys.stdout.write(char)
-            sys.stdout.write(' ')
-        sys.stdout.write("\n")
+            if idx != len(row)-1:
+                sys.stdout.write(' ')
+        sys.stdout.write("|\n")
+    print "+%s+" % ('-' * (len(grid[0])*2-1))
     sys.stdout.write("\n")
 
 
@@ -86,9 +90,11 @@ def main():
     height = 10
 
     grid = create_random_grid(width, height)
-    mask = create_mask_plate(width, height)
-
+    print "Grid of random letters (%d x %d)" % (width, height)
     print_grid(grid)
+
+    mask = create_mask_plate(width, height)
+    print "Two-sided mask with holes"
     print_grid(mask, colors=False)
  
     message_a = 'MAGNETCOMBINATIONCODEISHRJAS'
@@ -99,23 +105,25 @@ def main():
     gt = GearTranslator(2684)
 
     # Prepare side A
-    gt.select_and_set_wheels([2,4,5], "DAD")
+    gt.select_and_set_gears([2,4,5], "DAD")
     masked_front = mask_message(
         grid,
         mask,
         'A',
         gt.encrypt(message_a)
     )
+    print "First message applied with holes from side A"
     print_grid(masked_front)
 
     # Prepare side B
-    gt.select_and_set_wheels([4,3,6], "BEE")
+    gt.select_and_set_gears([4,3,6], "BEE")
     masked_back = mask_message(
         masked_front,
         mask,
         'B',
         gt.encrypt(message_b)
     )
+    print "Second message applied with holes from side B"
     print_grid(masked_back)
 
 if __name__ == "__main__":
