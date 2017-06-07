@@ -59,7 +59,10 @@ void setup() {
   // Servos
   rightDrawerServo.attach(rightDrawerServoPin);
   keyDrawerServo.attach(keyDrawerServoPin);
-  
+
+  // Play a success sound
+  digitalWrite(successSoundPin,HIGH);
+  delay(100);
   // On power up, we want this drawer to open
   openRightDrawer();
 }
