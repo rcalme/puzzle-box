@@ -8,16 +8,18 @@
 
 // Initialize the PegBoard
 const byte pegCount = 10;
+//const byte pegCount = 9;
+// If using pins 0 and 1, we can't do serial communication at the same time.
 const byte pegPins[pegCount] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 PegBoard pegBoard = PegBoard(pegCount, pegPins);
 
 // Initialize the LEDs
 const byte ledCount = 6;
-const byte ledPins[ledCount] = { A0, A1, A2, A3, A4, A5 };
+const byte ledPins[ledCount] = { A0, A1, A2, A4, A3, A5 };
 
 // Initialize the success and failure sounds
-const byte successSoundPin = 13;
-const byte failureSoundPin = 12;
+//const byte successSoundPin = 13;
+//const byte failureSoundPin = 12;
 
 // Set up our combinations
 const Connection pegCombos[ledCount] = {
@@ -40,7 +42,7 @@ byte progress = 0;
 
 void setup() {
   // Enable serial connection
-  Serial.begin(9600);
+  //Serial.begin(9600);
 
   // Set all peg pins with pull-up resistance (high, unless pulled to ground)
   for (byte i=0; i<pegCount; i++) {
@@ -53,16 +55,17 @@ void setup() {
   }
 
   // Sound system
-  pinMode(successSoundPin, OUTPUT);
-  pinMode(failureSoundPin, OUTPUT);
+  //pinMode(successSoundPin, OUTPUT);
+  //pinMode(failureSoundPin, OUTPUT);
 
   // Servos
   rightDrawerServo.attach(rightDrawerServoPin);
   keyDrawerServo.attach(keyDrawerServoPin);
 
   // Play a success sound
-  digitalWrite(successSoundPin,HIGH);
-  delay(100);
+  //digitalWrite(successSoundPin,HIGH);
+  //delay(100);
+  
   // On power up, we want this drawer to open
   openRightDrawer();
 }
@@ -93,12 +96,27 @@ void loop() {
           Serial.println("Access granted.");
           
           // Play a success sound
-          digitalWrite(successSoundPin,HIGH);
-          delay(100);
-          digitalWrite(successSoundPin,LOW);
+          //digitalWrite(successSoundPin,HIGH);
+          //delay(100);
+          //digitalWrite(successSoundPin,LOW);
 
           // Open the key drawer
           openKeyDrawer();
+
+          // Flash all LEDs
+          for (int j=0; j<=5; j++) {
+            for (int i=0; i<=ledCount; i++) {
+              digitalWrite(ledPins[i],LOW);
+            }
+            delay(250);
+            for (int i=0; i<=ledCount; i++) {
+              digitalWrite(ledPins[i],HIGH);
+            }
+            delay(250);
+          }
+
+          // Stop failure sound
+          //digitalWrite(failureSoundPin,LOW);
         }
       }
       // Bad connection - reset progress
@@ -108,7 +126,7 @@ void loop() {
         // Turn off all LEDs.
         for (int i=progress-1; i>=0; i--) {
           // Play failure sound
-          digitalWrite(failureSoundPin,HIGH);
+          //digitalWrite(failureSoundPin,HIGH);
             
           // Turn an LED off
           Serial.print("LED ");
@@ -118,48 +136,48 @@ void loop() {
           delay(500);
 
           // Stop failure sound
-          digitalWrite(failureSoundPin,LOW);
+          //digitalWrite(failureSoundPin,LOW);
         }
 
         // Reset progress to 0
         progress = 0;
       }
     }
-  }
-  // There is no longer a connection
-  else {
-    // We had previously completed the combination, and a wire has been disconnected
-    if (progress >= ledCount) {
-      Serial.print("Peg board resetting...");
-      for (int i=0; i<ledCount; i++) {
-        // Turn an LED off
-        digitalWrite(ledPins[i],LOW);
+    // There is no longer a connection
+    else {
+      // We had previously completed the combination, and a wire has been disconnected
+      if (progress >= ledCount) {
+        Serial.println("Peg board resetting...");
+        for (int i=0; i<ledCount; i++) {
+          // Turn an LED off
+          digitalWrite(ledPins[i],LOW);
+        }
+        // Reset progress
+        progress = 0;
+        // Close the drawers
+        resetServos();
       }
-      // Reset progress
-      progress = 0;
-      // Close the drawers
-      resetServos();
     }
-  }
+  }  
 }
 
 // Causes the servo to move such that the right drawer opens
 void openRightDrawer(){
-  Serial.print("Opening right drawer");
+  Serial.println("Opening right drawer");
   rightDrawerServo.write(90);  // 90 degrees
   delay(500);
 }
 
 // Causes the servo to move such that the key drawer opens
 void openKeyDrawer(){
-  Serial.print("Opening key drawer");
+  Serial.println("Opening key drawer");
   keyDrawerServo.write(180);  // 180 degrees
   delay(500);
 }
 
 // Causes the servo to move such that the right drawer closes
 void resetServos(){
-  Serial.print("Closing both drawers");
+  Serial.println("Closing both drawers");
   rightDrawerServo.write(0);  // 0 degrees
   delay(250);
   keyDrawerServo.write(0);    // 0 degrees
