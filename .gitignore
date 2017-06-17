@@ -10,3 +10,4 @@ Drawers/Latch/old/*
 *.MOL
 *.LOG
 *.ecp
+.~lock*
