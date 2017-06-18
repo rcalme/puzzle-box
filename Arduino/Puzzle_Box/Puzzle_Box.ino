@@ -57,13 +57,6 @@ void setup() {
   //pinMode(successSoundPin, OUTPUT);
   //pinMode(failureSoundPin, OUTPUT);
 
-  // Servos
-  // Write first, with intended positions, so that attach doesn't move to center
-  rightDrawerServo.write(130);
-  rightDrawerServo.attach(rightDrawerServoPin, 1000, 2200);
-  keyDrawerServo.write(0);
-  keyDrawerServo.attach(keyDrawerServoPin, 800, 2125);
-
   // Play a success sound
   //digitalWrite(successSoundPin,HIGH);
   //delay(100);
@@ -159,18 +152,40 @@ void loop() {
 void openRightDrawer(){
   Serial.println("Opening right drawer");
   rightDrawerServo.write(180);
+  rightDrawerServo.attach(rightDrawerServoPin, 1000, 2200);
   delay(500);
+  rightDrawerServo.detach();
+}
+// Causes the servo to move such that the right drawer closes
+void closeRightDrawer(){
+  Serial.println("Closing right drawer");
+  rightDrawerServo.write(130);
+  rightDrawerServo.attach(rightDrawerServoPin, 1000, 2200);
+  delay(500);
+  rightDrawerServo.detach();
 }
 
 // Causes the servo to move such that the key drawer opens
 void openKeyDrawer(){
   Serial.println("Opening key drawer");
-  keyDrawerServo.write(180);  // 180 degrees
+  keyDrawerServo.write(180);
+  keyDrawerServo.attach(keyDrawerServoPin, 800, 2125);
+  delay(500);
+  keyDrawerServo.detach();
+}
+
+// Causes the servo to move such that the key drawer opens
+void closeKeyDrawer(){
+  Serial.println("Closing key drawer");
+  keyDrawerServo.write(0);
+  keyDrawerServo.attach(keyDrawerServoPin, 800, 2125);
+  delay(500);
+  keyDrawerServo.detach();
 }
 
 // Causes the servo to move such that the right drawer closes
 void resetServos(){
   Serial.println("Closing both drawers");
-  rightDrawerServo.write(130);
-  keyDrawerServo.write(0);
+  closeRightDrawer();
+  closeKeyDrawer();
 }
