@@ -30,7 +30,7 @@ The gears themselves were first 3D printed, and later laser-cut in 1/4" red-stai
 The magnet puzzle was always going to be a fixed-location puzzle, as the internal [reed switches] were wired in series.
 The circuit is closed only when all switches were simultaneously closed.
 
-The grid, and the symbols (in the [Magzetition font]) determine the locations of the five magnets to complete the hidden circuit, with itself supplies power to the [Arduino].
+The grid, and the symbols (in the [Magzetition font]) determine the locations of the five magnets to complete the hidden circuit, which itself supplies power to the [Arduino].
 
 The outer layer is 1/4" maple, routed on a [ShopBot PRS Alpha], available at my local maker space.
  ![Magnet router plan](https://raw.githubusercontent.com/rcalme/puzzle-box/master/Process/Images/09_Magnet_grid_plan.png)
