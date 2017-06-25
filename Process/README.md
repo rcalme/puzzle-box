@@ -54,7 +54,7 @@ The back panel is just an elaborate storage container for the [grille] mask plat
 The two faces are routed on a ShopBot, and sealed via security hex bit screws to make access difficult until the correct tool is located.
 
 The grille itself is laser-cut out of two layers of 1/8" alder, sandwiching neodymium magnets.
-The magnets ensure that the grille snaps into a single, specific position on the front of the box. When flipped to its 'B' side, the magnets are reversed, and again, the grille only snaps into a single (but different)location.
+The magnets ensure that the grille snaps into a single, specific position on the front of the box. When flipped to its 'B' side, the magnets are reversed, and again, the grille only snaps into a single (but different) location.
 
  ![mask plate in place](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/19_Letter_panel_with_mask.jpg)
  
@@ -112,6 +112,8 @@ I investigated the possibility of filling all the CNC-routed lettering with colo
  ![epoxy resin](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/15_Epoxy_inlay_process.jpg)
  ![epoxy finished](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/16_Epoxy_inlay_finished.jpg)
  
+I also wrote the Arduino code to operate a speaker circuit with sound effects, but chose to cut this portion out due to lack of time, battery power draw, and available internal space.
+
 # Tools
 
 ## Hardware Used
