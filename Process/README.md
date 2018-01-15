@@ -3,6 +3,21 @@
 * This project was designed and built with mainly open-source softare.
 * The specialized tools involved were available through the [TinkerMill] in Longmont, CO.
 
+## Parts List
+* See the [parts list]
+
+## Hardware Used
+* 80 Watt Laser Cutter ([Rabbit RL-80-1290])
+* CNC Router ([Shopbot PRS Alpha])
+* 3D Printer ([LulzBot Mini])
+* Table Saw ([SawStop])
+* Arduino ([Sparkfun Arduino Pro Mini 328 - 5V/16MHz])
+
+## Software Used
+* 3D Modelng ([SketchUp])
+* 3D Slicing ([Cura])
+* 2D Vector Design ([Inkscape])
+
 ## Puzzle Concepts
 
 I did a lot of research on puzzles and puzzle box mechanisms while deciding what elements to include in this box.
@@ -114,20 +129,6 @@ I investigated the possibility of filling all the CNC-routed lettering with colo
  
 I also wrote the Arduino code to operate a speaker circuit with sound effects, but chose to cut this portion out due to lack of time, battery power draw, and available internal space.
 
-# Tools
-
-## Hardware Used
-* 80 Watt Laser Cutter ([Rabbit RL-80-1290])
-* CNC Router ([Shopbot PRS Alpha])
-* 3D Printer ([LulzBot Mini])
-* Table Saw ([SawStop])
-* Arduino ([Sparkfun Arduino Pro Mini 328 - 5V/16MHz])
-
-## Software Used
-* 3D Modelng ([SketchUp])
-* 3D Slicing ([Cura])
-* 2D Vector Design ([Inkscape])
-
    [Tinkermill]: <https://tinkermill.org>
    [Cipher gears]: <https://www.youtube.com/watch?v=hiOjqskDlS0>
    [Inverted drawer opening another]: <https://www.youtube.com/watch?v=foH1jnLvS_I>
@@ -150,3 +151,4 @@ I also wrote the Arduino code to operate a speaker circuit with sound effects, b
    [SketchUp]: <http://www.sketchup.com>
    [Cura]: <https://www.lulzbot.com/cura>
    [Inkscape]: <https://inkscape.org/en>
+   [parts list]: <PartsList.md>
