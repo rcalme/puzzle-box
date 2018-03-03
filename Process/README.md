@@ -27,7 +27,7 @@ Below are links to some content that inspired me:
 * [Grille cipher]
 
 ## Initial prototype out of foam board:
- ![Foam prototype](https://raw.githubusercontent.com/rcalme/puzzle-box/master/Process/Images/00_Foam_prototype.jpg)
+ ![Foam prototype](Images/00_Foam_prototype.jpg)
 
 ## Creating Cipher Gears
 
@@ -36,9 +36,9 @@ I wrote [Python code] to generate the order of the randomized letters on the fiv
 The same was created as a [stand-alone web interface] by porting the code to Javascript to make it operable in a browser.
 
 The gears themselves were first 3D printed, and later laser-cut in 1/4" red-stained maple, with the letters on the gear teeth engraved.
- ![3D printed gears](https://raw.githubusercontent.com/rcalme/puzzle-box/master/Process/Images/02_3D_printed_gears.jpg)
- ![Cipher set](https://raw.githubusercontent.com/rcalme/puzzle-box/master/Process/Images/04_Cipher_set.jpg)
- ![Final gears](https://raw.githubusercontent.com/rcalme/puzzle-box/master/Process/Images/39_Box_gears.jpg)
+ ![3D printed gears](Images/02_3D_printed_gears.jpg)
+ ![Cipher set](Images/04_Cipher_set.jpg)
+ ![Final gears](Images/39_Box_gears.jpg)
  
 ## Creating Magnet Puzzle
 
@@ -48,11 +48,11 @@ The circuit is closed only when all switches were simultaneously closed.
 The grid, and the symbols (in the [Magzetition font]) determine the locations of the five magnets to complete the hidden circuit, which itself supplies power to the [Arduino].
 
 The outer layer is 1/4" maple, routed on a [ShopBot PRS Alpha], available at my local maker space.
- ![Magnet router plan](https://raw.githubusercontent.com/rcalme/puzzle-box/master/Process/Images/09_Magnet_grid_plan.png)
- ![Magnet puzzle outer](https://raw.githubusercontent.com/rcalme/puzzle-box/master/Process/Images/10_Magnet_panel.jpg)
+ ![Magnet router plan](mages/09_Magnet_grid_plan.png)
+ ![Magnet puzzle outer](Images/10_Magnet_panel.jpg)
 
 The inner layer is 1/8" Baltic birch, cut on an [80 watt Rabbit laser cutter], and wired up with these [mini reed switches].
- ![Magnet puzzle inner](https://raw.githubusercontent.com/rcalme/puzzle-box/master/Process/Images/11_Magnet_puzzle.jpg)
+ ![Magnet puzzle inner](Images/11_Magnet_puzzle.jpg)
  
 ## Creating Peg Board Puzzle
 
@@ -61,7 +61,7 @@ I set the code up to accept any combinations, and installed six LEDs to show pro
 
 The [C++ code that probes this peg board] to detect any connection(s) using only 10 pins on an Arduino took some time to get right.
 
- ![Peg board improvements](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/13_Peg_board_improvements.jpg)
+ ![Peg board improvements](Images/13_Peg_board_improvements.jpg)
 
 ## Creating the Back Panel Storage
 
@@ -71,23 +71,23 @@ The two faces are routed on a ShopBot, and sealed via security hex bit screws to
 The grille itself is laser-cut out of two layers of 1/8" alder, sandwiching neodymium magnets.
 The magnets ensure that the grille snaps into a single, specific position on the front of the box. When flipped to its 'B' side, the magnets are reversed, and again, the grille only snaps into a single (but different) location.
 
- ![mask plate in place](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/19_Letter_panel_with_mask.jpg)
+ ![mask plate in place](Images/19_Letter_panel_with_mask.jpg)
  
  ## Creating the Front Letter Panel
  
  The front letter panel is again routed on a ShopBot, with a field of random letters (in [Instruction font]).
  Only the letters highlighted with the grille are consequential (though encrypted).
- ![letter panel](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/18_Letter_panel.jpg)
+ ![letter panel](Images/18_Letter_panel.jpg)
  
  I wrote code to generate this letter field randomly, but consistently, as well as to calculate where to put the holes in the grille, such that when flipped from the 'A' side, to the 'B' side, there was no interference between the two patterns.
 
- ![grille code output](https://github.com/rcalme/puzzle-box/blob/master/Letter_Panel/Grid/grille_cipher.png)
+ ![grille code output](/Letter_Panel/Grid/grille_cipher.png)
  
  ## Creating the Drawers
  
  There are three operable drawers in the base of the box. 
  
- ![drawer assembly](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/27_Finished_drawers.jpg)
+ ![drawer assembly](Images/27_Finished_drawers.jpg)
  
  ### Left Drawer
  
@@ -98,7 +98,7 @@ The magnets ensure that the grille snaps into a single, specific position on the
  
  The threaded leg itself becomes a useful tool in solving the puzzle, as its tip is a star security bit, enabling access to the grille plate on the back of the box.
  
- ![screw driver leg](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/23_Finished_screw_driver_leg.jpg)
+ ![screw driver leg](Images/23_Finished_screw_driver_leg.jpg)
  
  ### Front Drawer
  
@@ -106,7 +106,7 @@ The magnets ensure that the grille snaps into a single, specific position on the
  The drawer is released by turning the left drawer upside down, and pushing it back into its alcove.
  
  The latch mechanism was custom designed, and 3D-printed for this purpose.
-  ![latch mechanism](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/05_Latch_prototype.jpg)
+  ![latch mechanism](Images/05_Latch_prototype.jpg)
   
  ### Right Drawer
  
@@ -118,14 +118,14 @@ The magnets ensure that the grille snaps into a single, specific position on the
  The key to unlock the box is finally accessible when it slides out the left side of the drawers via a servo.
  The sliding structure is made of two layers of laser-cut acrylic, and the brackets for the servo, and the slider are also custom designed and 3D-printed.
  
-  ![key slider](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/24_Key_servo_mechanism.jpg)
+  ![key slider](Images/24_Key_servo_mechanism.jpg)
   
 # Future improvements
 
 I investigated the possibility of filling all the CNC-routed lettering with colored epoxy resin, and sanding it back down to flush with the face of the box. The results looked nice, but took quite a bit of time to get right.
 
- ![epoxy resin](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/15_Epoxy_inlay_process.jpg)
- ![epoxy finished](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/16_Epoxy_inlay_finished.jpg)
+ ![epoxy resin](Images/15_Epoxy_inlay_process.jpg)
+ ![epoxy finished](Images/16_Epoxy_inlay_finished.jpg)
  
 I also wrote the Arduino code to operate a speaker circuit with sound effects, but chose to cut this portion out due to lack of time, battery power draw, and available internal space.
 
@@ -133,7 +133,7 @@ I also wrote the Arduino code to operate a speaker circuit with sound effects, b
    [Cipher gears]: <https://www.youtube.com/watch?v=hiOjqskDlS0>
    [Inverted drawer opening another]: <https://www.youtube.com/watch?v=foH1jnLvS_I>
    [Grille cipher]: <https://www.youtube.com/watch?v=tmgmOpaP_58>
-   [Python code]: <https://github.com/rcalme/puzzle-box/blob/master/Cipher_Gears/Translator/cryptex.py>
+   [Python code]: </Cipher_Gears/Translator/cryptex.py>
    [stand-alone web interface]: <https://rawgit.com/rcalme/puzzle-box/master/Cipher_Gears/Translator/cipherGears.html>
    [reed switches]: <https://en.wikipedia.org/wiki/Reed_switch>
    [Magzetition font]: <http://www.dafont.com/magzetician.font>
@@ -144,7 +144,7 @@ I also wrote the Arduino code to operate a speaker circuit with sound effects, b
    [80 watt Rabbit laser cutter]: <http://www.rabbitlaserusa.com/laser_RL1290.html>
    [Rabbit RL-80-1290]: <http://www.rabbitlaserusa.com/laser_RL1290.html>
    [mini reed switches]: <https://www.sparkfun.com/products/10601>
-   [C++ code that probes this peg board]: <https://github.com/rcalme/puzzle-box/tree/master/Arduino/Puzzle_Box>
+   [C++ code that probes this peg board]: </Arduino/Puzzle_Box>
    [grille]: <https://en.wikipedia.org/wiki/Grille_(cryptography)>
    [LulzBot Mini]: <https://www.lulzbot.com/store/printers/lulzbot-mini>
    [SawStop]: <http://www.sawstop.com>
