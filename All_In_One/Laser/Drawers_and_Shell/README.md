@@ -5,7 +5,7 @@ These parts are all laid out on one sheet, but may have to be modified if you ha
 ![Drawer parts](drawers_and_shell_0125_birch_plywood.png)
 
 ### Process
-These pieces are pretty simple to cut and etch. I've made different colors etching, cutting internal holes, and cutting external outlines.
+These pieces are pretty simple to cut and etch. I've made different colors for etching, cutting internal holes, and cutting external outlines.
 
 I used the following laser power/speed settings:
 * Etch
