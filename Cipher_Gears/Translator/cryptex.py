@@ -3,6 +3,7 @@ import argparse
 import re
 from string import ascii_uppercase
 import random
+import sys
 
 class GearTranslator:
 
@@ -40,12 +41,14 @@ class GearTranslator:
             self._rotate(spokes, teeth)
             # Take note of the selected gears and their order
             self.gears_in_use.append(spokes)
+            #self._show_gears()
     
 
     """ Debugging: Prints the currently selected gears, and their rotation"""
     def _show_gears(self):
         for spokes in self.gears_in_use:
             print "%d-spoke: %s" % (spokes, ''.join(self.gears[spokes]))
+        print ""
         pass
     
 
@@ -111,6 +114,7 @@ def main():
     parser.add_argument('--gears', '-g', required=True, nargs='+', type=int, help='Which gears, and their order')
     parser.add_argument('--key', '-k', required=True, help='The key to use when setting up the gears')
     parser.add_argument('--seed', '-s', default=2684, type=int, help='The random seed to use')
+    parser.add_argument('--show', default=False, action='store_true', help='Show the gear layout used')
     group = parser.add_mutually_exclusive_group()
     group.add_argument('--encrypt', '-e', default=False, action='store_true', help='Encrypt the string provided')
     group.add_argument('--decrypt', '-d', default=False, action='store_true', help='Decrypt the string provided')
@@ -132,7 +136,8 @@ def main():
     
     # Set a combination
     gt.select_and_set_gears(args.gears, args.key.upper())
-    #gt._show_gears()
+    if args.show:
+        gt._show_gears()
      
     if args.encrypt:
         print gt.encrypt(args.message, spacing=True)
