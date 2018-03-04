@@ -2,16 +2,17 @@
 
 This project is an attempt to build my skills in rapid prototyping, including laser cutting, 3D modeling and printing, and Arduino applications.
 
-![Final product](https://github.com/rcalme/puzzle-box/blob/master/Process/Images/38_Box_final.jpg)
+![Final product](/Process/Images/38_Box_final.jpg)
 
 
 ## Puzzles
 
-* Magnet grid, with 30 positions, and 5 magnets
-* Plug board with 10 numbered connectors, accepting 6 ordered pairs of digits
+* Magnet grid, with 30 positions, and 5 magnets (142,506 possible conbinations)
+* Plug board with 10 numbered connectors, accepting 6 ordered pairs of digits (9,366,819 possible combinations)
 * Screw panel, inaccessible without the correct tool
 * Grille cipher, with double-sided grille
-* Decryption cipher, with 5 unique two-sided gears
+* Decryption cipher, with 5 unique two-sided gears (1,054,460 gear setup combinations)
+  * 60 gear trio choices, 17,576 letter orientations
 * Reversible drawer causing another drawer to open
 * Hidden-in-plain-sight puzzles
 
@@ -25,4 +26,4 @@ This project is an attempt to build my skills in rapid prototyping, including la
 
 You can see the progress in creating the physical box components on the [process readme].
 
-[process readme]: <https://github.com/rcalme/puzzle-box/tree/master/Process>
+[process readme]: </Process>
