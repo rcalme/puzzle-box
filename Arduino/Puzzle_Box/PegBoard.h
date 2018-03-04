@@ -21,6 +21,12 @@ class PegBoard {
     // object representing the pins (if any)
     // that are connected
     Connection scanPins();
+
+    // Sets pin for scan mode
+    void startProbe(const byte pin);
+
+    // Sets pin back to normal mode
+    void stopProbe(const byte pin);
   
   public:
     // Constructor

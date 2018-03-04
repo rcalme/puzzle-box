@@ -8,7 +8,7 @@
 
 // Initialize the PegBoard
 const byte pegCount = 10;
-// If using pins 0 and 1, we can't do serial communication at the same time.
+// NOTE: If using pins 0 and 1, we can't do serial communication at the same time.
 const byte pegPins[pegCount] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 PegBoard pegBoard = PegBoard(pegCount, pegPins);
 
@@ -22,18 +22,28 @@ const byte ledPins[ledCount] = { A0, A1, A2, A4, A3, A5 };
 
 // Set up our combinations
 const Connection pegCombos[ledCount] = {
-  Connection(0,2),
-  Connection(2,3),
-  Connection(1,5),
-  Connection(0,4),
-  Connection(1,6),
-  Connection(1,7)
+    // Here are the expected combinations, and their order
+    // NOTE: The nature of this pegboard makes it impossible
+    //       to require a connection between the same digits
+    //       (e.g. You can never wire up 2--2)
+    Connection(0,1),
+    Connection(0,2),
+    Connection(0,3),
+    Connection(0,4),
+    Connection(0,5),
+    Connection(0,6)
+    // That's the kind of thing an idiot would have on their luggage!
+    // https://www.youtube.com/watch?v=_JNGI1dI-e8
 };
 
 Servo rightDrawerServo;
 Servo keyDrawerServo;
 const byte rightDrawerServoPin = 10;
 const byte keyDrawerServoPin = 11;
+const int rightMin = 1000;
+const int rightMax = 2200;
+const int keyMin = 800;
+const int keyMax = 2125;
 
 // How many combinations have we solved thusfar
 byte progress = 0;
@@ -43,7 +53,7 @@ void setup() {
   // Enable serial connection
   //Serial.begin(9600);
 
-  // Set all peg pins with pull-up resistance (high, unless pulled to ground)
+  // Set up the peg board pin modes
   for (byte i=0; i<pegCount; i++) {
     pinMode(pegPins[i],INPUT_PULLUP);
   }
@@ -95,7 +105,7 @@ void loop() {
           //delay(100);
           //digitalWrite(successSoundPin,LOW);
 
-          // Flash all LEDs
+          // Flash all LEDs a few times
           for (int j=0; j<=5; j++) {
             for (int i=0; i<=ledCount; i++) {
               digitalWrite(ledPins[i],LOW);
@@ -118,7 +128,7 @@ void loop() {
       else {
         Serial.println("  Bad connection. All locks resetting.");
             
-        // Turn off all LEDs.
+        // Turn off all LEDs in reverse order
         for (int i=progress-1; i>=0; i--) {
           // Play failure sound
           //digitalWrite(failureSoundPin,HIGH);
@@ -134,7 +144,8 @@ void loop() {
           //digitalWrite(failureSoundPin,LOW);
         }
         
-        // If the box had been solved, move the servos back to start now.
+        // If the box had been solved, and an incorrect connection is made,
+        // move the servos back to their starting positions.
         if (progress >= ledCount) {
           Serial.println("Resetting servos...");
           // Close the drawers
@@ -148,39 +159,33 @@ void loop() {
   }  
 }
 
+void moveServo(servo, position, minVal, maxVal) {
+  servo.write(position);
+  servo.attach(servoPin, minVal, maxVal);
+  delay(500);
+  servo.detach();
+}
+
 // Causes the servo to move such that the right drawer opens
 void openRightDrawer(){
   Serial.println("Opening right drawer");
-  rightDrawerServo.write(180);
-  rightDrawerServo.attach(rightDrawerServoPin, 1000, 2200);
-  delay(500);
-  rightDrawerServo.detach();
+  moveServo(rightDrawerServo, 180, rightMin, rightMax);
 }
 // Causes the servo to move such that the right drawer closes
 void closeRightDrawer(){
   Serial.println("Closing right drawer");
-  rightDrawerServo.write(130);
-  rightDrawerServo.attach(rightDrawerServoPin, 1000, 2200);
-  delay(500);
-  rightDrawerServo.detach();
+  moveServo(rightDrawerServo, 130, rightMin, rightMax);
 }
 
 // Causes the servo to move such that the key drawer opens
 void openKeyDrawer(){
   Serial.println("Opening key drawer");
-  keyDrawerServo.write(180);
-  keyDrawerServo.attach(keyDrawerServoPin, 800, 2125);
-  delay(500);
-  keyDrawerServo.detach();
+  moveServo(keyDrawerServo, 180, keyMin, keyMax);
 }
-
 // Causes the servo to move such that the key drawer opens
 void closeKeyDrawer(){
   Serial.println("Closing key drawer");
-  keyDrawerServo.write(0);
-  keyDrawerServo.attach(keyDrawerServoPin, 800, 2125);
-  delay(500);
-  keyDrawerServo.detach();
+  moveServo(keyDrawerServo, 0, keyMin, keyMax);
 }
 
 // Causes the servo to move such that the right drawer closes
