@@ -3,7 +3,7 @@
 Depending upon your CNC, and software toolchain, you're likely to have to edit 
 these files before you can send anything to your machine.
 
-I cut this out of a maple board, because it's what I had on hand.
+I cut this out of a 1x6 maple board, because it's what I had on hand.
 
 The initial dimensions were 5.5" wide, 0.75" thick, and 48" long.
 
