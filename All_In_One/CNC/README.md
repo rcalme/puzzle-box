@@ -11,6 +11,7 @@ The thickest parts are 0.5", so the first pass is to use a flycutter bit to plan
 down the surface. This makes sure that it's both flat, and the correct thickness.
 
 ![Cutting layout](all_box_faces_075_maple.png)
+![Rendered result](all_box_faces_rendered.png)
 
 ## Router Bits Used
 Bit Type | Bit Diameter | Used For
