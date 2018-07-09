@@ -48,7 +48,7 @@ The circuit is closed only when all switches were simultaneously closed.
 The grid, and the symbols (in the [Magzetition font]) determine the locations of the five magnets to complete the hidden circuit, which itself supplies power to the [Arduino].
 
 The outer layer is 1/4" maple, routed on a [ShopBot PRS Alpha], available at my local maker space.
- ![Magnet router plan](mages/09_Magnet_grid_plan.png)
+ ![Magnet router plan](Images/09_Magnet_grid_plan.png)
  ![Magnet puzzle outer](Images/10_Magnet_panel.jpg)
 
 The inner layer is 1/8" Baltic birch, cut on an [80 watt Rabbit laser cutter], and wired up with these [mini reed switches].
