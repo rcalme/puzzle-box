@@ -1,3 +1,6 @@
+## Share your progress!
+[Let me know](mailto:ryan.calme@gmail.com) if you've built one of these from my plans, and if so, what you needed to change so that I can make it better for others!
+
 # Design and Manufacture Process
 
 * This project was designed and built with mainly open-source softare.
