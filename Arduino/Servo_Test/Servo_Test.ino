@@ -1,5 +1,10 @@
 #include <Servo.h>
 
+// On start-up, moves the right drawer servo (pin 10)
+//
+// Also opens a serial connection to the terminal, and allows you to type
+// degree values, which will be reflected on the key drawer servo (pin 11)
+
 Servo rightDrawerServo;
 Servo keyDrawerServo;
 const byte rightDrawerServoPin = 10;
