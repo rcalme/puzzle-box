@@ -8,12 +8,14 @@
 
 // Initialize the PegBoard
 const byte pegCount = 10;
+// Specify the pins for the peg board connectors
 // NOTE: If using pins 0 and 1, we can't do serial communication at the same time.
 const byte pegPins[pegCount] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 PegBoard pegBoard = PegBoard(pegCount, pegPins);
 
 // Initialize the LEDs
 const byte ledCount = 6;
+// Specify the pins for the pegboard LEDs
 const byte ledPins[ledCount] = { A0, A1, A2, A4, A3, A5 };
 
 // Initialize the success and failure sounds
@@ -26,6 +28,7 @@ const Connection pegCombos[ledCount] = {
     // NOTE: The nature of this pegboard makes it impossible
     //       to require a connection between the same digits
     //       (e.g. You can never wire up 2--2)
+    // Change these (obviously) to the combinations you would like to use.
     Connection(0,1),
     Connection(0,2),
     Connection(0,3),
@@ -38,8 +41,10 @@ const Connection pegCombos[ledCount] = {
 
 Servo rightDrawerServo;
 Servo keyDrawerServo;
+// Specify the pins for the two servo control lines
 const byte rightDrawerServoPin = 10;
 const byte keyDrawerServoPin = 11;
+// Min/max PWM values - will likely have to fiddle with these per servo
 const int rightMin = 1000;
 const int rightMax = 2200;
 const int keyMin = 800;
@@ -159,7 +164,12 @@ void loop() {
   }  
 }
 
-void moveServo(servo, position, minVal, maxVal) {
+// Moves the specified servo to the requested degree position.
+// Requires the specification of min/max values.
+// Attaches to the servo, moves it, and detaches. This means that
+// the servo won't hold its position, but also won't jitter
+// or continue to draw battery. This was sufficient for this use.
+void moveServo(Servo servo, int position, int minVal, int maxVal) {
   servo.write(position);
   servo.attach(servoPin, minVal, maxVal);
   delay(500);
