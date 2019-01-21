@@ -34,6 +34,9 @@ class PegBoard {
     // Destructor
     ~PegBoard();
 
+    // Sets pin modes for peg board
+    void begin();
+
     // Returns true, if there's a connection
     // (different than the last seen)
     // Otherwise, returns false.
