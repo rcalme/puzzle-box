@@ -7,15 +7,13 @@
 
   "left", and "right", are the two pegs participating
   in the connection.
-
-  Values of [-1, -1] for left and right, imply no active
-  connection
 */
  
 class Connection {
   private:
     byte left;
     byte right;
+    boolean connected;
 
   public:
     // Constructors
