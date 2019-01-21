@@ -7,22 +7,30 @@
 #define CLOSED HIGH
 
 // Initialize the PegBoard
+//   Specify the pins for the peg board connectors
+//   NOTE: If using pins 0 and 1, we can't do serial communication at the same time.
 const byte pegCount = 10;
-// Specify the pins for the peg board connectors
-// NOTE: If using pins 0 and 1, we can't do serial communication at the same time.
 const byte pegPins[pegCount] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 PegBoard pegBoard = PegBoard(pegCount, pegPins);
 
+// Initialize the Servos
+//   Specify the pins for the two servo control lines
+// Right drawer servo
+const byte rightDrawerServoPin = 10;
+const int rightDrawerRange[2] = {1000, 2200}; // will likely have to fiddle with these values per servo
+// Key drawer servo
+const byte keyDrawerServoPin = 11;
+const int keyDrawerRange[2] = {800, 2125};    // will likely have to fiddle with these values per servo
+// Only use one Servo object, and connect/disconnect as needed.
+// We're never controlling both simultaneously.
+Servo servo;
+
 // Initialize the LEDs
+//   Specify the pins for the pegboard LEDs
 const byte ledCount = 6;
-// Specify the pins for the pegboard LEDs
 const byte ledPins[ledCount] = { A0, A1, A2, A4, A3, A5 };
 
-// Initialize the success and failure sounds
-//const byte successSoundPin = 13;
-//const byte failureSoundPin = 12;
-
-// Set up our combinations
+// Define our peg board combinations
 const Connection pegCombos[ledCount] = {
     // Here are the expected combinations, and their order
     // NOTE: The nature of this pegboard makes it impossible
@@ -39,42 +47,20 @@ const Connection pegCombos[ledCount] = {
     // https://www.youtube.com/watch?v=_JNGI1dI-e8
 };
 
-Servo rightDrawerServo;
-Servo keyDrawerServo;
-// Specify the pins for the two servo control lines
-const byte rightDrawerServoPin = 10;
-const byte keyDrawerServoPin = 11;
-// Min/max PWM values - will likely have to fiddle with these per servo
-const int rightMin = 1000;
-const int rightMax = 2200;
-const int keyMin = 800;
-const int keyMax = 2125;
-
 // How many combinations have we solved thusfar
 byte progress = 0;
 
-
 void setup() {
-  // Enable serial connection
+  // Enable serial connection - Note: when using pins 0 or 1 for anything else, this won't work.
   //Serial.begin(9600);
 
-  // Set up the peg board pin modes
-  for (byte i=0; i<pegCount; i++) {
-    pinMode(pegPins[i],INPUT_PULLUP);
-  }
+  // Enable peg board
+  pegBoard.begin();
 
   // Set all LED pins as OUTPUT
   for (byte j=0; j<ledCount; j++) {
     pinMode(ledPins[j],OUTPUT);
   }
-
-  // Sound system
-  //pinMode(successSoundPin, OUTPUT);
-  //pinMode(failureSoundPin, OUTPUT);
-
-  // Play a success sound
-  //digitalWrite(successSoundPin,HIGH);
-  //delay(100);
   
   // On power up, we want this drawer to open
   openRightDrawer();
@@ -85,117 +71,89 @@ void loop() {
   if (pegBoard.hasNewConnection()) {
     Connection conn = pegBoard.getConnection();
     conn.print();
-    if (conn.isConnected()) {
-      // New connection matches expected combination
-      if (conn == pegCombos[progress]) {
-        Serial.print("  Good connection! Lock ");
-        Serial.print(progress+1);
-        Serial.println(" disabled.");
+    // New connection matches expected combination
+    if (conn == pegCombos[progress]) {
+      Serial.print("  Good connection! Lock ");
+      Serial.print(progress+1);
+      Serial.println(" disabled.");
   
-        // Light up an LED
-        Serial.print("LED ");
-        Serial.print(progress+1);
-        Serial.println(" on.");
-        digitalWrite(ledPins[progress],HIGH);
+      // Light up an LED
+      Serial.print("LED ");
+      Serial.print(progress+1);
+      Serial.println(" on.");
+      digitalWrite(ledPins[progress],HIGH);
   
-        // Move forward in the combination
-        progress++;
+      // Move forward in the combination
+      progress++;
   
-        // We've connected all the peg pairs
-        if (progress >= ledCount) {
-          Serial.println("Access granted.");
-          
-          // Play a success sound
-          //digitalWrite(successSoundPin,HIGH);
-          //delay(100);
-          //digitalWrite(successSoundPin,LOW);
+      // We've connected all the peg pairs
+      if (progress >= ledCount) {
+        Serial.println("Access granted.");
 
-          // Flash all LEDs a few times
-          for (int j=0; j<=5; j++) {
-            for (int i=0; i<=ledCount; i++) {
-              digitalWrite(ledPins[i],LOW);
-            }
-            delay(250);
-            for (int i=0; i<=ledCount; i++) {
-              digitalWrite(ledPins[i],HIGH);
-            }
-            delay(250);
+        // Flash all LEDs a few times
+        for (int j=0; j<=5; j++) {
+          for (int i=0; i<ledCount; i++) {
+            digitalWrite(ledPins[i],LOW);
           }
-          
-          // Open the key drawer
-          openKeyDrawer();
+          delay(250);
+          for (int i=0; i<ledCount; i++) {
+            digitalWrite(ledPins[i],HIGH);
+          }
+          delay(250);
+        }
 
-          // Stop failure sound
-          //digitalWrite(failureSoundPin,LOW);
-        }
-      }
-      // Bad connection - reset progress
-      else {
-        Serial.println("  Bad connection. All locks resetting.");
-            
-        // Turn off all LEDs in reverse order
-        for (int i=progress-1; i>=0; i--) {
-          // Play failure sound
-          //digitalWrite(failureSoundPin,HIGH);
-            
-          // Turn an LED off
-          Serial.print("LED ");
-          Serial.print(i+1);
-          Serial.println(" off.");
-          digitalWrite(ledPins[i],LOW);
-          delay(500);
-
-          // Stop failure sound
-          //digitalWrite(failureSoundPin,LOW);
-        }
-        
-        // If the box had been solved, and an incorrect connection is made,
-        // move the servos back to their starting positions.
-        if (progress >= ledCount) {
-          Serial.println("Resetting servos...");
-          // Close the drawers
-          resetServos();
-        }
-        
-        // Reset progress to 0
-        progress = 0;
+        // Open the key drawer
+        openKeyDrawer();
       }
     }
-  }  
-}
+    // Bad connection - reset progress
+    else {
+      Serial.println("  Bad connection. All locks resetting.");
 
-// Moves the specified servo to the requested degree position.
-// Requires the specification of min/max values.
-// Attaches to the servo, moves it, and detaches. This means that
-// the servo won't hold its position, but also won't jitter
-// or continue to draw battery. This was sufficient for this use.
-void moveServo(Servo servo, int position, int minVal, int maxVal) {
-  servo.write(position);
-  servo.attach(servoPin, minVal, maxVal);
-  delay(500);
-  servo.detach();
+      // Turn off all LEDs in reverse order
+      for (int i=progress-1; i>=0; i--) {
+        // Turn an LED off
+        Serial.print("LED ");
+        Serial.print(i+1);
+        Serial.println(" off.");
+        digitalWrite(ledPins[i],LOW);
+        delay(500);
+      }
+        
+      // If the box had been solved, and an incorrect connection is made,
+      // move the servos back to their starting positions to reset the box.
+      if (progress >= ledCount) {
+        Serial.println("Resetting servos...");
+        // Close the drawers
+        resetServos();
+      }
+
+      // Reset progress to 0
+      progress = 0;
+    }
+  }  
 }
 
 // Causes the servo to move such that the right drawer opens
 void openRightDrawer(){
   Serial.println("Opening right drawer");
-  moveServo(rightDrawerServo, 180, rightMin, rightMax);
+  moveServo(rightDrawerServoPin, 180, rightDrawerRange);
 }
 // Causes the servo to move such that the right drawer closes
 void closeRightDrawer(){
   Serial.println("Closing right drawer");
-  moveServo(rightDrawerServo, 130, rightMin, rightMax);
+  moveServo(rightDrawerServoPin, 130, rightDrawerRange);
 }
 
 // Causes the servo to move such that the key drawer opens
 void openKeyDrawer(){
   Serial.println("Opening key drawer");
-  moveServo(keyDrawerServo, 180, keyMin, keyMax);
+  moveServo(keyDrawerServoPin, 180, keyDrawerRange);
 }
 // Causes the servo to move such that the key drawer opens
 void closeKeyDrawer(){
   Serial.println("Closing key drawer");
-  moveServo(keyDrawerServo, 0, keyMin, keyMax);
+  moveServo(keyDrawerServoPin, 0, keyDrawerRange);
 }
 
 // Causes the servo to move such that the right drawer closes
@@ -203,4 +161,22 @@ void resetServos(){
   Serial.println("Closing both drawers");
   closeRightDrawer();
   closeKeyDrawer();
+}
+
+/*
+ * Moves the specified servo to the requested degree position.
+ * Requires the specification of min/max values.
+ * Attaches to the servo, moves it, and detaches. This means that
+ * the servo won't hold its position, but also won't jitter
+ * or continue to draw battery. This was sufficient for this use.
+ */
+void moveServo(byte servoPin, int position, const int range[]) {
+  // Write first, to avoid jumping
+  servo.write(position);
+  // Connect, causing the servo to move to the position written earlier
+  servo.attach(servoPin, range[0], range[1]);
+  // Give the servo some time to get where it's going
+  delay(500);
+  // Disconnect from the servo, to save battery and avoid jitter
+  servo.detach();
 }
